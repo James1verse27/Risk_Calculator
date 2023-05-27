@@ -30,8 +30,10 @@
     
     #footer
     hr(),
-    tags$a(href='https://james1verse27.github.io/',
+    tags$a(href='https://github.com/James1verse27/risk_calculator/',
            tags$img(src='https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/github_logo.jpg?raw=true',width = "5%", height = "5%" )),
+    tags$a(href='https://james1verse27.github.io/',
+           tags$img(src='https://github.com/James1verse27/James1verse27.github.io/blob/main/assets/icons/mstile-150x150.png?raw=true',width = "5%", height = "5%" )),
     tags$a(href="mailto:kjh8661@korea.ac.kr%20",
            tags$img(src='https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/gmail_logo.png?raw=true',width = "2.5%", height = "2.5%" , align="middle"))
   )
