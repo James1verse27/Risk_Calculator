@@ -1,0 +1,12 @@
+name: cumc_risk_calculator
+title: cumc_risk_calculator
+username:
+account: rptashkin
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 669891
+bundleId: 1840633
+url: https://rptashkin.shinyapps.io/cumc_risk_calculator/
+when: 1548655256.25826
+asMultiple: FALSE
+asStatic: FALSE
