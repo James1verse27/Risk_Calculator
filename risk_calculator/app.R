@@ -1,3 +1,4 @@
+library(shiny)
 library(shinyjs)
 
 PAGE_TITLE <- "calculator"
@@ -7,14 +8,14 @@ ui <- fluidPage(
   titlePanel(windowTitle = PAGE_TITLE,
              title =
                tags$a(href='https://biostat.korea.ac.kr/',
-                      tags$img(src='korea_biostat_logo.png',width = "50%", height = "50%" ))),
+                      tags$img(src='https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/korea_biostat_logo.png?raw=true',width = "40%", height = "40%" ))),
   
   h6(div(HTML("<em>\nSelect the model parameters below to calculate risk estimate:\n\n</em>"))),
   
   useShinyjs(),
   #create client side input form
   sidebarLayout(
-    sidebarPanel(width = 5,
+    sidebarPanel(
                  div(
                    id="form",
                    sliderInput(inputId = 'pelvic_LNR', label = 'pelvic_LNR', min=0, max=0.9,value=0.05, step=0.01, round=0),
@@ -22,17 +23,17 @@ ui <- fluidPage(
                    selectInput(inputId = "size",label = "size", choices = c('1','0'), selected = "1"),
                    selectInput(inputId = "path",label = "path", choices = c('1','2','3','4'), selected = '1'),
                    actionButton("calc", "Calculate"),
-                   verbatimTextOutput("final_val")
-                   div(img(src="nomogram.png",height = 200,wigth=400), style="text-align: center;")
+                   verbatimTextOutput("final_val"),
+                   
                  )),
-    mainPanel()),
+    mainPanel(div(img(src="https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/nomogram.png?raw=true",height = 400,wigth=250), style="text-align: center;"))),
   
   #footer
   hr(),
   tags$a(href='https://james1verse27.github.io/',
-         tags$img(src='github_logo.jpg',width = "5%", height = "5%" )),
-  tags$a(href='kjh8661@gmail.com',
-         tags$img(src='gmail_logo.png',width = "2.5%", height = "2.5%" , align="middle"))
+         tags$img(src='https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/github_logo.jpg?raw=true',width = "5%", height = "5%" )),
+  tags$a(href="mailto:kjh8661@korea.ac.kr%20",
+         tags$img(src='https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/gmail_logo.png?raw=true',width = "2.5%", height = "2.5%" , align="middle"))
 )
 
 
@@ -92,7 +93,7 @@ server <- function(input, output) {
     #calculate total points
     totalPoints = (pelvic_LNR_Points + SCC_Ag_Points + size_Points + path_Points)
     risk.score=B*totalPoints-beta_xbar
-    risk = 1-(est.30days^(exp(risk.score))))
+    risk = 1-(est.30days^(exp(risk.score)))
     return(risk)
   }
   
