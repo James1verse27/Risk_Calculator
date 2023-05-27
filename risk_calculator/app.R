@@ -8,7 +8,7 @@ ui <- fluidPage(
   titlePanel(windowTitle = PAGE_TITLE,
              title =
                tags$a(href='https://biostat.korea.ac.kr/',
-                      tags$img(src='https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/korea_biostat_logo.png?raw=true',width = "40%", height = "40%" ))),
+                      tags$img(src='https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/korea_biostat_logo.png?raw=true',width = "20%", height = "20%" ))),
   
   h6(div(HTML("<em>\nSelect the model parameters below to calculate risk estimate:\n\n</em>"))),
   
@@ -26,7 +26,7 @@ ui <- fluidPage(
                    verbatimTextOutput("final_val"),
                    
                  )),
-    mainPanel(div(img(src="https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/nomogram.png?raw=true",height = 400,wigth=250), style="text-align: center;"))),
+    mainPanel(div(img(src="https://github.com/James1verse27/risk_calculator/blob/main/risk_calculator/www/nomogram.png?raw=true",height = 700,wigth=350), style="text-align: center;"))),
   
   #footer
   hr(),
